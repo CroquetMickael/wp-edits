@@ -17,5 +17,5 @@ steps:
 
 - script: |
     npm install
-    npm run test:all
+    npm run test
   displayName: 'Building wp-edits'

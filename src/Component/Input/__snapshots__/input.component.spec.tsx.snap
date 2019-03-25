@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Component Should render properly Input Component 1`] = `
+<div>
+  <div
+    class="group"
+  >
+    <input
+      name="firstname"
+      required=""
+      type="text"
+      value="Mickael"
+    />
+    <span
+      class="highlight"
+    />
+    <span
+      class="bar"
+    />
+    <label>
+      Name
+    </label>
+  </div>
+</div>
+`;

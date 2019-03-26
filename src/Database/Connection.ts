@@ -5,7 +5,6 @@ import squel from "squel";
 import { InitQuery } from "./InitQuery";
 import { navigate } from "@reach/router";
 let dbPath = path.join(remote.app.getPath("userData"), "/wpEdits.db.sqlite");
-
 const functions = {
   tryConnectBdd: function() {
     let db = new Database(dbPath, err => {

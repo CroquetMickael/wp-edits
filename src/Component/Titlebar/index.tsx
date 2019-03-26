@@ -1,3 +1,4 @@
-import Titlebar from './Titlebar.container'
+import { TitleBarContainer } from "./Titlebar.container";
 
-export default Titlebar;
+const Titlebar = TitleBarContainer;
+export { Titlebar };

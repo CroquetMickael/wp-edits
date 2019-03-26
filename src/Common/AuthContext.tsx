@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, Component, FunctionComponentElement } from "react";
 import { navigate } from "@reach/router";
 export interface AppContextInterface {
   isAuth: boolean;
-  login: () => any;
-  logout: () => any;
+  login: () => void;
+  logout: () => void;
 }
-
+interface AuthProps {
+  children: FunctionComponentElement<Component>;
+}
 const AuthContext = React.createContext<any>(null);
 
-const AuthProvider = (props: any) => {
+const AuthProvider = (props: AuthProps) => {
   const [isAuth, setIsAuth] = useState(false);
 
   const login = () => {
     setIsAuth(true);
-    navigate('/home');
+    navigate("/home");
   };
 
   const logout = () => {
@@ -28,4 +30,4 @@ const AuthProvider = (props: any) => {
   );
 };
 
-export {AuthContext, AuthProvider };
+export { AuthContext, AuthProvider };

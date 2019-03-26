@@ -1,13 +1,14 @@
 import React from "react";
-import './Titlebar.css'
+import "./Titlebar.css";
 
-interface TitleBarProps extends Readonly<{
+interface TitleBarProps
+  extends Readonly<{
     onMaximize: () => void;
     onMinimize: () => void;
     onClose: () => void;
-}> {}
+  }> {}
 
-const Titlebar = (props: TitleBarProps) => (
+const TitleBarComponent = (props: TitleBarProps) => (
   <div className="title-bar">
     <div className="title">wp-edits</div>
 
@@ -16,9 +17,11 @@ const Titlebar = (props: TitleBarProps) => (
 
       <button onClick={props.onMaximize}>+</button>
 
-      <button  onClick={props.onClose} className="close-btn">x</button>
+      <button onClick={props.onClose} className="close-btn">
+        x
+      </button>
     </div>
   </div>
 );
 
-export default Titlebar;
+export { TitleBarComponent };

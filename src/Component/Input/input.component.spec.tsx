@@ -1,23 +1,23 @@
-import React from "react";
+import React, { FormEvent } from "react";
 import { render, RenderResult, cleanup } from "react-testing-library";
-import InputComponent from "./input.component";
+import { InputComponent } from "./input.component";
 
 interface InputProps
   extends Readonly<{
     label: string;
     name: string;
     value: string;
-    handler: (event: any) => void;
+    handler: (event: Event | undefined) => void;
   }> {}
 
 describe("Input Component", () => {
   let component: RenderResult;
   let props: InputProps;
   beforeEach(() => {
-    let value = "Mickael";
-    let label = "Name";
-    let name = "firstname";
-    let handler = () => jest.fn();
+    const value = "Mickael";
+    const label = "Name";
+    const name = "firstname";
+    const handler = () => jest.fn();
     props = {
       value,
       handler,

@@ -4,10 +4,10 @@ import { Link } from "@reach/router";
 const Test = () => (
   <div>
     <h2>Test</h2>
-    <li>  
+    <li>
       <Link to="/home">Home</Link>
     </li>
   </div>
 );
 
-export default Test;
+export { Test };

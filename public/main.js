@@ -16,7 +16,6 @@ const installExtensions = async () => {
     )
   ).catch(console.error());
 };
-
 function createWindow() {
   // Créer le browser window.
   win = new BrowserWindow({

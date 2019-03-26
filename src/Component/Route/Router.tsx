@@ -1,11 +1,11 @@
-import Home from "../../Page/Home/Home.component";
-import Test from "../../Page/Test/Test.component";
-import Login from "../../Page/Login/Login.container";
+import { Home } from "../../Page/Home/Home.component";
+import { Test } from "../../Page/Test/Test.component";
+import { Login } from "../../Page/Login/Login.container";
 import React from "react";
 import { Router } from "@reach/router";
 import { AuthProvider } from "../../Common/AuthContext";
 import { PublicRoute, ProtectedRoute } from "../Route/Route";
-import './route.css'
+import "./route.css";
 const Content = () => (
   <>
     <AuthProvider>
@@ -18,4 +18,4 @@ const Content = () => (
   </>
 );
 
-export default Content;
+export { Content };

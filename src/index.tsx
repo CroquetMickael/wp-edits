@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./Page/App";
+import { App } from "./Page/App";
 import * as serviceWorker from "./serviceWorker";
 import { functions } from "./Database/Connection";
 

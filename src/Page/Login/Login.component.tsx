@@ -1,32 +1,31 @@
 import React from "react";
-import Input from "../../Component/Input/input.component";
+import { InputComponent } from "../../Component/Input/input.component";
 import "./login.css";
 interface LoginProps
   extends Readonly<{
     password: string;
     userName: string;
-    handleUserNameChange: (event: any) => void;
-    handlePasswordChange: (event: any) => void;
+    handleUserNameChange: (event: Event | undefined) => void;
+    handlePasswordChange: (event: Event | undefined) => void;
     login: () => void;
   }> {}
 
-const Login = (props: LoginProps) => (
+const LoginComponent = (props: LoginProps) => (
   <>
     <div className="container">
       <div className="card">
-      <div className="half gradient-background">
-        <div className="left gradient-background">
-        </div>
+        <div className="half gradient-background">
+          <div className="left gradient-background" />
         </div>
         <div className="half cleanarea">
           <h1>Login</h1>
-          <Input
+          <InputComponent
             label={"Username"}
             name={"UserName"}
             handler={props.handleUserNameChange}
             value={props.userName}
           />
-          <Input
+          <InputComponent
             label={"Password"}
             name={"password"}
             handler={props.handlePasswordChange}
@@ -41,4 +40,4 @@ const Login = (props: LoginProps) => (
   </>
 );
 
-export default Login;
+export { LoginComponent };

@@ -1,12 +1,7 @@
-import Titlebar from "./Titlebar.component";
+import { TitleBarComponent } from "./Titlebar.component";
 import React from "react";
 import Electron from "electron";
 
-declare global {
-  interface Window {
-    require: any;
-  }
-}
 const remote = Electron.remote;
 const titleBarFunction = {
   onMinimize: () => {
@@ -27,6 +22,6 @@ const titleBarFunction = {
   }
 };
 
-const titlebar = () => <Titlebar {...titleBarFunction} />;
+const TitleBarContainer = () => <TitleBarComponent {...titleBarFunction} />;
 
-export default titlebar;
+export { TitleBarContainer };

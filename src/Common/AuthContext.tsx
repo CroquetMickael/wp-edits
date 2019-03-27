@@ -30,10 +30,10 @@ const AuthProvider = (props: AuthProps) => {
   return (
     <AuthContext.Provider
       value={{
+        callback: callback,
         isAuth: isAuth,
         login: login,
-        logout: logout,
-        callback: callback
+        logout: logout
       }}
     >
       {props.children}

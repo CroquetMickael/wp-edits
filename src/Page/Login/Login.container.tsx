@@ -6,22 +6,26 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const handleUserNameChange = (event: Event | undefined) => {
-    setUserName((event!.target! as HTMLInputElement).value);
+    if (event && event.target) {
+      setUserName((event.target as HTMLInputElement).value);
+    }
   };
 
   const handlePasswordChange = (event: Event | undefined) => {
-    setPassword((event!.target! as HTMLInputElement).value);
+    if (event && event.target) {
+      setPassword((event.target as HTMLInputElement).value);
+    }
   };
   const authValues: AppContextInterface = useContext(AuthContext);
 
   const loginProps = {
-    password: password,
-    userName: userName,
     handlePasswordChange: (event: Event | undefined) =>
       handlePasswordChange(event),
     handleUserNameChange: (event: Event | undefined) =>
       handleUserNameChange(event),
-    login: authValues.login
+    login: authValues.login,
+    password: password,
+    userName: userName
   };
 
   return <>{<LoginComponent {...loginProps} />}</>;

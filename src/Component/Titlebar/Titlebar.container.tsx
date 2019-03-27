@@ -4,9 +4,9 @@ import Electron from "electron";
 
 const remote = Electron.remote;
 const titleBarFunction = {
-  onMinimize: () => {
+  onClose: () => {
     const window = remote.getCurrentWindow();
-    window.minimize();
+    window.close();
   },
   onMaximize: () => {
     const window = remote.getCurrentWindow();
@@ -16,9 +16,9 @@ const titleBarFunction = {
       window.maximize();
     }
   },
-  onClose: () => {
+  onMinimize: () => {
     const window = remote.getCurrentWindow();
-    window.close();
+    window.minimize();
   }
 };
 

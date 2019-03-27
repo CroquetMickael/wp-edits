@@ -1,12 +1,13 @@
 import React from "react";
 import { InputComponent } from "../../Component/Input/input.component";
+
 import "./login.css";
 interface LoginProps
   extends Readonly<{
     password: string;
     userName: string;
-    handleUserNameChange: (event: Event | undefined) => void;
-    handlePasswordChange: (event: Event | undefined) => void;
+    handleUserNameChange: (event: Event) => void;
+    handlePasswordChange: (event: Event) => void;
     login: () => void;
   }> {}
 

@@ -11,12 +11,11 @@ const installExtensions = async () => {
   const extensions = ["REACT_DEVELOPER_TOOLS"];
 
   return Promise.all(
-    extensions.map(
+    extensions.map((name) =>
       installer.default(installer.REACT_DEVELOPER_TOOLS, forceDownload)
     )
   ).catch(console.error());
 };
-
 function createWindow() {
   // Créer le browser window.
   win = new BrowserWindow({

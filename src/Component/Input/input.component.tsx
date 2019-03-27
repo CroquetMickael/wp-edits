@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FormEvent } from "react";
 import "./input.css";
 
 interface InputProps
@@ -6,10 +6,10 @@ interface InputProps
     label: string;
     name: string;
     value: string;
-    handler: (event: any) => void;
+    handler: (event: Event | undefined) => void;
   }> {}
 
-const inputComponent = (props: InputProps) => (
+const InputComponent = (props: InputProps) => (
   <div className="group">
     <input
       type="text"
@@ -24,4 +24,4 @@ const inputComponent = (props: InputProps) => (
   </div>
 );
 
-export default inputComponent;
+export { InputComponent };

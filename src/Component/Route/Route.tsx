@@ -19,7 +19,6 @@ const ProtectedRoute: FunctionComponent<Props> = ({
     </>
   );
 };
-export default ProtectedRoute;
 
 const PublicRoute: FunctionComponent<Props> = ({
   component: Component,

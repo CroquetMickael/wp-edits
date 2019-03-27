@@ -2,24 +2,16 @@
 
 exports[`Input Component Should render properly Input Component 1`] = `
 <div>
-  <div
-    class="group"
-  >
+  <div>
     <input
+      class="appearance-none border-b border-b-2 border-grey 
+ bg-transparent text-grey-darker 
+ m-2 py-2 w-full px-2 leading-tight focus:outline-none focus:border-blue"
       name="firstname"
+      placeholder="Name"
       required=""
-      type="text"
       value="Mickael"
     />
-    <span
-      class="highlight"
-    />
-    <span
-      class="bar"
-    />
-    <label>
-      Name
-    </label>
   </div>
 </div>
 `;

@@ -7,6 +7,7 @@
     "start:electron": "electron .",
     "start:react": "craco start",
     "test": "craco test --watchAll=false",
+    "test:watch": "craco test",
     "dev": "concurrently \"cross-env BROWSER=none npm run start:react\" \"wait-on http://localhost:3000 && electron .\"",
     "dist": "npx build --x64 --macos --win --linux --c.extraMetadata.main=build/electron.js -p always",
     "build": "craco build",
@@ -60,6 +61,7 @@
     "mocha": "^5.2.0",
     "react-testing-library": "^6.0.2",
     "spectron": "^5.0.0",
+    "tailwind": "^4.0.0",
     "ts-jest": "^24.0.0",
     "wait-on": "^3.2.0"
   }

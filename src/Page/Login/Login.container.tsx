@@ -19,6 +19,7 @@ const Login = () => {
   const authValues: AppContextInterface = useContext(AuthContext);
 
   const loginProps = {
+    callback: authValues.callback,
     handlePasswordChange: (event: Event | undefined) =>
       handlePasswordChange(event),
     handleUserNameChange: (event: Event | undefined) =>

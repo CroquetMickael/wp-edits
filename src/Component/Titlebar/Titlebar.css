@@ -1,4 +1,5 @@
 .title-bar {
+  display: flex;
   -webkit-app-region: drag;
 
   height: 32px;

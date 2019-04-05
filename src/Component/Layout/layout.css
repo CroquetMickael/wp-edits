@@ -1,0 +1,6 @@
+.hidden-scrollbar .inner {
+    height:200px;
+    overflow:auto;
+    margin:15px -300px 15px 15px;
+    padding-right:300px;
+ }

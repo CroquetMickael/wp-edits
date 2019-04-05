@@ -19,6 +19,26 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+ .truncate-text-multiline {
+  overflow: hidden;
+  display: block;
+  height: 109.2px;
+  margin: 0 auto;
+  font-size: 26px;
+  line-height: 1.4;
+  width: 400px;
+  position: relative;
+}
+
+.truncate-text-multiline:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 150px;
+  height: 36.4px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #f5f6f9 50%);
+}
 
 html {
   line-height: 1.15; /* 1 */

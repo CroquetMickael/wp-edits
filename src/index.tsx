@@ -4,9 +4,9 @@ import { App } from "./Page/App";
 import "./index.css";
 import "./tailwind.css";
 import * as serviceWorker from "./serviceWorker";
-import { functions } from "./Database/Connection";
+import { initDatabase } from "./Database/InitDb/initDatabase";
 
-functions.tryConnectBdd();
+initDatabase();
 ReactDOM.render(<App />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change

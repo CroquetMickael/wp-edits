@@ -1,7 +1,7 @@
 export interface Article {
-    id: number;
-    image_entete: Blob;
-    contenu: string;
-    statut: string;
-    titre: string;
-  }
+  id: number;
+  image_entete: {};
+  contenu: string;
+  statut: string;
+  titre: string;
+};

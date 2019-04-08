@@ -9,7 +9,8 @@ const ArticleService = async (setArticle: Function, id: number) => {
     .where("id = ?", id)
     .toString();
   db.all(ArticleQuery, (error: Error, rows) => {
-    setArticle(rows[0]);
+    let firstElement = rows.shift();
+    setArticle(firstElement);
   });
   db.close();
 };

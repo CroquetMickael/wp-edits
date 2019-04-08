@@ -17,7 +17,7 @@ const AuthService = {
         .where("login = ?", username)
         .where("password = ?", password)
         .toString();
-      db.get(checkUser, [], (error: Error, rows: any) => {
+      db.get(checkUser, [], (error: Error, rows) => {
         if (rows != null && rows != undefined && rows != []) {
           setIsAuth(true);
           navigate("/home");

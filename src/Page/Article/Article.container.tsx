@@ -1,13 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, FunctionComponentElement, Component } from "react";
 import { ArticleComponent } from "./Article.component";
 import { ArticleService } from "./Article.service";
-interface ArticleContainerProps {
-  articleId: number;
-}
+import { Article } from "../../Common/Interface/Article.interface";
+
 const ArticleContainer = (props: any) => {
-  const [article, setArticle] = useState({});
+  const [article, setArticle] = useState<Article>({
+    contenu: "",
+    id: 0,
+    statut: "",
+    titre: "",
+    image_entete: { size: 0, type: "", slice: {} }
+  });
   const ArticleProps = {
-    article
+    article: article
   };
   useEffect(() => {
     ArticleService(setArticle, props.articleId);

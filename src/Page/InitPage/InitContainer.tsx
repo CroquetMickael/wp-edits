@@ -31,9 +31,9 @@ const InitContainer = () => {
   const InitProps = {
     handlePasswordChange: (event: Event | undefined) =>
       handlePasswordChange(event),
+    handleUrlChange: (event: Event | undefined) => handleUrlChange(event),
     handleUserNameChange: (event: Event | undefined) =>
       handleUserNameChange(event),
-    handleUrlChange: (event: Event | undefined) => handleUrlChange(event),
     username,
     url,
     password,

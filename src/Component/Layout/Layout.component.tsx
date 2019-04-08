@@ -1,14 +1,14 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Sidebar } from "../Sidebar";
 import "./layout.css";
-
-const Layout = (props: any) => (
+interface Props {
+  children: ReactNode;
+}
+const Layout = (props: Props) => (
   <div className="h-screen">
     <div className="flex ">
       <Sidebar />
-      <div className="w-full flex flex-wrap  h-screen">
-        {props.children}
-      </div>
+      <div className="w-full flex flex-wrap  h-screen">{props.children}</div>
     </div>
   </div>
 );

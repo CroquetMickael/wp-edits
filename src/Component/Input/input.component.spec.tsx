@@ -17,18 +17,18 @@ describe("Input Component", () => {
   let props: InputProps;
   beforeEach(() => {
     const className = "";
-    const value = "Mickael";
     const label = "Name";
     const name = "firstname";
     const type = "text";
+    const value = "Mickael";
     const handler = () => jest.fn();
     props = {
-      type,
       className,
-      value,
       handler,
       label,
-      name
+      name,
+      type,
+      value
     };
     component = render(<InputComponent {...props} />);
   });

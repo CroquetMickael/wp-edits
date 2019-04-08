@@ -8,7 +8,7 @@ const BlogConnectService = (setUrl: Function) => {
     .field("url")
     .toString();
   db.all(UrlQuery, (error: Error, rows) => {
-    let firstElement = rows.shift();
+    const firstElement = rows.shift();
     setUrl(firstElement.url);
   });
   db.close();

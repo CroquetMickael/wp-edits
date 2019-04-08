@@ -7,9 +7,9 @@ const ArticleContainer = (props: any) => {
   const [article, setArticle] = useState<Article>({
     contenu: "",
     id: 0,
+    image_entete: { size: 0, type: "", slice: {} },
     statut: "",
     titre: "",
-    image_entete: { size: 0, type: "", slice: {} }
   });
   const ArticleProps = {
     article: article

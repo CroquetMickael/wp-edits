@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FormEvent } from "react";
 import "./input.css";
 
 interface InputProps
@@ -7,12 +7,19 @@ interface InputProps
     label: string;
     name: string;
     value: string;
+<<<<<<< HEAD
     type: string;
+=======
+>>>>>>> master
     handler: (event: Event | undefined) => void;
   }> {}
 
 const InputComponent = (props: InputProps) => (
+<<<<<<< HEAD
   <div className={props.className}>
+=======
+  <div className="group">
+>>>>>>> master
     <input
       className="appearance-none border-b border-b-2 border-grey 
       bg-transparent text-grey-darker 

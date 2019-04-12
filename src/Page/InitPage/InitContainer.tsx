@@ -36,8 +36,8 @@ const InitContainer = () => {
       handleUserNameChange(event),
     init,
     password,
-    username,
-    url
+    url,
+    username
   };
 
   return <>{<InitComponent {...InitProps} />}</>;

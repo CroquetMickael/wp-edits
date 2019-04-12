@@ -8,7 +8,7 @@ interface InitProps
     handleUserNameChange: (event: Event | undefined) => void;
     handlePasswordChange: (event: Event | undefined) => void;
     handleUrlChange: (event: Event | undefined) => void;
-    Init: (username: string, password: string, url: string) => void;
+    init: (username: string, password: string, url: string) => void;
   }> {}
 
 const InitComponent = (props: InitProps) => (
@@ -49,7 +49,7 @@ const InitComponent = (props: InitProps) => (
               <div
                 className="bg-blue cursor-pointer hover:bg-blue-dark text-center text-white font-bold p-2 mx-32 rounded"
                 onClick={() =>
-                  props.Init(props.username, props.password, props.url)
+                  props.init(props.username, props.password, props.url)
                 }
               >
                 Create account

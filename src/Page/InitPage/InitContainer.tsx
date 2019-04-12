@@ -24,7 +24,7 @@ const InitContainer = () => {
       setUrl((event.target as HTMLInputElement).value);
     }
   };
-  const Init = (username: string, password: string, url: string) => {
+  const init = (username: string, password: string, url: string) => {
     InitService(username, password, url);
     navigate("/");
   };
@@ -34,10 +34,10 @@ const InitContainer = () => {
     handleUrlChange: (event: Event | undefined) => handleUrlChange(event),
     handleUserNameChange: (event: Event | undefined) =>
       handleUserNameChange(event),
-    username,
-    url,
+    init,
     password,
-    Init
+    username,
+    url
   };
 
   return <>{<InitComponent {...InitProps} />}</>;

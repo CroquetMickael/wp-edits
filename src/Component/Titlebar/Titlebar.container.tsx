@@ -1,8 +1,7 @@
 import { TitleBarComponent } from "./Titlebar.component";
 import React from "react";
-import Electron from "electron";
+import { remote } from "electron";
 
-const remote = Electron.remote;
 const titleBarFunction = {
   onClose: () => {
     const window = remote.getCurrentWindow();

@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useContext } from "react";
 import { Redirect, RouteComponentProps } from "@reach/router";
-import { AuthContext, AppContextInterface } from "../../Common/AuthContext";
+import { AuthContext, AppContextInterface } from "../../Common/AuthContext/AuthContext";
 
 type Props = { component: FunctionComponent } & RouteComponentProps;
 

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { LoginComponent } from "./Login.component";
-import { AuthContext, AppContextInterface } from "../../Common/AuthContext";
-const Login = () => {
+import { AuthContext, AppContextInterface } from "../../Common/AuthContext/AuthContext";
+const LoginContainer = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
@@ -19,6 +19,7 @@ const Login = () => {
   const authValues: AppContextInterface = useContext(AuthContext);
 
   const loginProps = {
+    callback: authValues.callback,
     handlePasswordChange: (event: Event | undefined) =>
       handlePasswordChange(event),
     handleUserNameChange: (event: Event | undefined) =>
@@ -31,4 +32,4 @@ const Login = () => {
   return <>{<LoginComponent {...loginProps} />}</>;
 };
 
-export { Login };
+export { LoginContainer };

@@ -4,8 +4,10 @@ import { InputComponent } from "./input.component";
 
 interface InputProps
   extends Readonly<{
+    className: string;
     label: string;
     name: string;
+    type: string;
     value: string;
     handler: (event: Event | undefined) => void;
   }> {}
@@ -14,15 +16,19 @@ describe("Input Component", () => {
   let component: RenderResult;
   let props: InputProps;
   beforeEach(() => {
-    const value = "Mickael";
+    const className = "";
     const label = "Name";
     const name = "firstname";
+    const type = "text";
+    const value = "Mickael";
     const handler = () => jest.fn();
     props = {
-      value,
+      className,
       handler,
       label,
-      name
+      name,
+      type,
+      value
     };
     component = render(<InputComponent {...props} />);
   });

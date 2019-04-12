@@ -8,11 +8,10 @@ const ProtectedRoute: FunctionComponent<Props> = ({
   component: Component,
   ...rest
 }) => {
-  const AuthValues: AppContextInterface | null = useContext(AuthContext);
+  const AuthValues: AppContextInterface = useContext(AuthContext);
   return (
     <>
-      {
-        AuthValues!.isAuth ? (
+      {AuthValues.isAuth ? (
         <Component {...rest} />
       ) : (
         <Redirect from="" to="/" noThrow />

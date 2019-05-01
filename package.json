@@ -9,9 +9,9 @@
     "test": "craco test --watchAll=false",
     "test:watch": "craco test",
     "dev": "concurrently \"cross-env BROWSER=none npm run start:react\" \"wait-on http://localhost:3000 && set ELECTRON_START_URL=http://localhost:3000 && electron .\"",
-    "dist:win": "npx build --x64 --win  --c.extraMetadata.main=build/main.js -p always",
-    "dist:lin": "npx build --x64 --linux  --c.extraMetadata.main=build/main.js -p always",  
-    "dist:mac": "npx build --x64 --macos  --c.extraMetadata.main=build/main.js -p always",
+    "dist:win": "npx build --x64 --win  --c.extraMetadata.main=build/main.js always",
+    "dist:lin": "npx build --x64 --linux  --c.extraMetadata.main=build/main.js always",  
+    "dist:mac": "npx build --x64 --macos  --c.extraMetadata.main=build/main.js always",
     "build": "craco build",
     "eject": "craco eject",
     "postinstall": "install-app-deps"

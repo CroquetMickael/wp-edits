@@ -13,6 +13,7 @@ jobs:
     npm run test
     npm run build
     npm run dist:lin
+  displayName: 'Building wp-edits'
 - job: macOS
   trigger:
   - develop
@@ -29,6 +30,7 @@ jobs:
     npm run test
     npm run build
     npm run dist:mac
+  displayName: 'Building wp-edits'
 - job: Windows
   trigger:
   - develop
@@ -45,11 +47,5 @@ jobs:
     npm run test
     npm run build
     npm run dist:win
-steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '8.x'
-  displayName: 'Install Node.js'
-
-
   displayName: 'Building wp-edits'
+

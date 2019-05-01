@@ -6,7 +6,7 @@ jobs:
     job: Linux
     pool: 
       vmImage: ubuntu-16.04
-    steps: ~
+    steps: 
   - 
     displayName: "Install Node.js"
     inputs: 
@@ -23,7 +23,7 @@ jobs:
     job: macOS
     pool: 
       vmImage: macOS-10.13
-    steps: ~
+    steps: 
   - 
     displayName: "Install Node.js"
     inputs: 
@@ -39,7 +39,7 @@ jobs:
     job: Windows
     pool: 
       vmImage: vs2017-win2016
-    steps: ~
+    steps: 
   - 
     displayName: "Install Node.js"
     inputs: 

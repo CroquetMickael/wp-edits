@@ -5,19 +5,53 @@
 
 trigger:
 - develop
+- master
+jobs:
+- job: Linux
+  pool:
+    vmImage: 'ubuntu-16.04'
+  steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '8.x'
+  displayName: 'Install Node.js'
+  - script: |
+    npm install
+    npm run test
+    npm run build
+    npm run dist:lin
 
-pool:
-  vmImage: 'Ubuntu-16.04'
-
+- job: macOS
+  pool:
+    vmImage: 'macOS-10.13'
+  steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '8.x'
+  displayName: 'Install Node.js'
+  - script: |
+    npm install
+    npm run test
+    npm run build
+    npm run dist:mac
+- job: Windows
+  pool:
+    vmImage: 'vs2017-win2016'
+  steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '8.x'
+  displayName: 'Install Node.js'
+ - script: |
+    npm install
+    npm run test
+    npm run build
+    npm run dist:win
 steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '8.x'
   displayName: 'Install Node.js'
 
-- script: |
-    npm install
-    npm run test
-    npm run build
-    npm run dist
+
   displayName: 'Building wp-edits'

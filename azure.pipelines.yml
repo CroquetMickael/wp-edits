@@ -1,13 +1,14 @@
-
-
-jobs:
-- job: Linux
-  trigger:
+trigger:
   - develop
   - master
+jobs:
+- job: Linux
   pool:
     vmImage: 'ubuntu-16.04'
   steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '8.x'
 - script: |
     npm install
     npm run test
@@ -24,7 +25,6 @@ jobs:
 - task: NodeTool@0
   inputs:
     versionSpec: '8.x'
-  displayName: 'Install Node.js'
 - script: |
     npm install
     npm run test
@@ -41,7 +41,6 @@ jobs:
 - task: NodeTool@0
   inputs:
     versionSpec: '8.x'
-  displayName: 'Install Node.js'
 - script: |
     npm install
     npm run test

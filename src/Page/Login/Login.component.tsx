@@ -40,7 +40,8 @@ const LoginComponent = (props: LoginProps) => (
             />
             <div className="mt-16">
               <div
-                className="bg-blue cursor-pointer hover:bg-blue-dark text-center text-white font-bold p-2 mx-32 rounded"
+                className="bg-blue cursor-pointer hover:bg-blue-dark text-center 
+                text-white font-bold p-2 mx-32 rounded mb-2"
                 onClick={() => props.login(props.userName, props.password)}
               >
                 Sign in

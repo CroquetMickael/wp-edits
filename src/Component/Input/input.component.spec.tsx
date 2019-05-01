@@ -1,4 +1,4 @@
-import React, { FormEvent } from "react";
+import React from "react";
 import { render, RenderResult, cleanup } from "react-testing-library";
 import { InputComponent } from "./input.component";
 

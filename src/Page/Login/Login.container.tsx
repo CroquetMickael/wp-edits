@@ -2,8 +2,8 @@ import React, { useState, useContext } from "react";
 import { LoginComponent } from "./Login.component";
 import { AuthContext, AppContextInterface } from "../../Common/AuthContext/AuthContext";
 const LoginContainer = () => {
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
+  const [userName, setUserName] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   const handleUserNameChange = (event: Event | undefined) => {
     if (event && event.target) {

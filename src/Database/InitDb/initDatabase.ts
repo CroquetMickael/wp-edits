@@ -1,9 +1,8 @@
 import { select } from "squel";
 import { InitQuery } from "./InitQuery";
-import { dbPath } from "../dbUtils";
 import { navigate } from "@reach/router";
 import { Database } from "sqlite3";
-import {table} from '../dbUtils'
+import {table, dbPath} from '../dbUtils'
 const initDatabase = () => {
   const db = new Database(dbPath);
   db.get(

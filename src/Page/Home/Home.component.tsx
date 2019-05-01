@@ -31,15 +31,15 @@ const HomeComponent = (props: HomeProps) => (
           </div>
           <div className="flex absolute w-full pin-b mb-2">
             <div
-              className="w-1/2 bg-grey-lighter rounded-full px-3 py-1 text-sm 
+              className="w-1/3 bg-grey-lighter rounded-full px-3 py-1 text-sm 
             font-semibold text-grey-darker mr-2"
             >
               {article.statut}
             </div>
-            <div className="w-1/2">
+            <div className="w-full">
               <span
                 className="rounded-full h-10 w-10 flex items-center justify-center 
-              bg-grey cursor-pointer float-right  mx-2"
+              bg-blue  cursor-pointer float-right mx-2 text-center"
                 onClick={() => navigate(`/article/${article.id}`)}
               >
                 Circle

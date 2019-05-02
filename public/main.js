@@ -4,7 +4,7 @@ const path = require("path");
 // fermee automatiquement quand l'objet JavaScript sera garbage collected.
 let win;
 const isDev = require("electron-is-dev");
-const url = require('url');
+const url = require("url");
 // Using require
 const installExtensions = async () => {
   const installer = require("electron-devtools-installer");
@@ -27,17 +27,16 @@ function createWindow() {
   });
 
   // et charge le index.html de l'application.
-  if(process.env.ELECTRON_START_URL != null)
-  {
-    win.loadURL(process.env.ELECTRON_START_URL)
+  if (process.env.ELECTRON_START_URL != null) {
+    win.loadURL(process.env.ELECTRON_START_URL);
   } else {
     win.loadURL(url.format({
-      pathname: 'index.html',    /* Attention here: origin is path.join(__dirname, 'index.html') */
-      protocol: 'file',
+      pathname: "index.html",    /* Attention here: origin is path.join(__dirname, 'index.html') */
+      protocol: "file",
       slashes: true
-    }))
+    }));
   }
-  
+
   // Ouvre les DevTools.
   win.webContents.openDevTools();
   // Émit lorsque la fenêtre est fermée.
@@ -56,15 +55,14 @@ app.on("ready", async () => {
   if (isDev) {
     await installExtensions();
   }
-  protocol.interceptFileProtocol('file', (request, callback) => {
-    const url = request.url.substr(7)    /* all urls start with 'file://' */
-    callback({ path: path.normalize(`${__dirname}/${url}`) })
-   
+  protocol.interceptFileProtocol("file", (request, callback) => {
+    const url = request.url.substr(7);    /* all urls start with 'file://' */
+    callback({ path: path.normalize(`${__dirname}/${url}`) });
   }, (err) => {
-    if (err) console.error('Failed to register protocol')
+    if (err) { console.error("Failed to register protocol"); }
   })
   createWindow();
-});
+}); 
 
 // Quitte l'application quand toutes les fenêtres sont fermées.
 app.on("window-all-closed", () => {

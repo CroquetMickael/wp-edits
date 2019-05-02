@@ -1,9 +1,10 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, protocol } = require("electron");
 const path = require("path");
 // Gardez une reference globale de l'objet window, si vous ne le faites pas, la fenetre sera
 // fermee automatiquement quand l'objet JavaScript sera garbage collected.
 let win;
 const isDev = require("electron-is-dev");
+const url = require("url");
 // Using require
 const installExtensions = async () => {
   const installer = require("electron-devtools-installer");
@@ -22,15 +23,20 @@ function createWindow() {
     width: 800,
     height: 600,
     frame: false,
-    webPreferences: { nodeIntegration: true }
+    webPreferences: { nodeIntegration: true, webSecurity: false }
   });
 
   // et charge le index.html de l'application.
-  win.loadURL(
-    isDev
-      ? "http://localhost:3000"
-      : `file://${path.join(__dirname, "../build/index.html")}`
-  );
+  if (process.env.ELECTRON_START_URL != null) {
+    win.loadURL(process.env.ELECTRON_START_URL);
+  } else {
+    win.loadURL(url.format({
+      pathname: "index.html",    /* Attention here: origin is path.join(__dirname, 'index.html') */
+      protocol: "file",
+      slashes: true
+    }));
+  }
+
   // Ouvre les DevTools.
   win.webContents.openDevTools();
   // Émit lorsque la fenêtre est fermée.
@@ -49,8 +55,14 @@ app.on("ready", async () => {
   if (isDev) {
     await installExtensions();
   }
+  protocol.interceptFileProtocol("file", (request, callback) => {
+    const url = request.url.substr(7);    /* all urls start with 'file://' */
+    callback({ path: path.normalize(`${__dirname}/${url}`) });
+  }, (err) => {
+    if (err) { console.error("Failed to register protocol"); }
+  });
   createWindow();
-});
+}); 
 
 // Quitte l'application quand toutes les fenêtres sont fermées.
 app.on("window-all-closed", () => {
@@ -68,5 +80,3 @@ app.on("activate", () => {
     createWindow();
   }
 });
-
-// Dans ce fichier, vous pouvez inclure le reste de votre code spécifique au processus principal. Vous pouvez également le mettre dans des fichiers séparés et les inclure ici.

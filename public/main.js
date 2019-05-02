@@ -60,7 +60,7 @@ app.on("ready", async () => {
     callback({ path: path.normalize(`${__dirname}/${url}`) });
   }, (err) => {
     if (err) { console.error("Failed to register protocol"); }
-  })
+  });
   createWindow();
 }); 
 

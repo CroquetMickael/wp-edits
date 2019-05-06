@@ -1,5 +1,4 @@
 import React, { FormEvent } from "react";
-import "./input.css";
 
 interface InputProps
   extends Readonly<{
@@ -14,9 +13,9 @@ interface InputProps
 const InputComponent = (props: InputProps) => (
   <div className={props.className}>
     <input
-      className="appearance-none border-b border-b-2 border-grey 
-      bg-transparent text-grey-darker 
-      m-2 py-2 w-full px-2 leading-tight focus:outline-none focus:border-blue"
+      className="appearance-none border-b-2 border-b border-grey bg-transparent 
+      text-grey-darker m-2 py-2 leading-tight 
+      focus:outline-none focus:border-blue w-full"
       type={props.type}
       name={props.name}
       placeholder={props.label}

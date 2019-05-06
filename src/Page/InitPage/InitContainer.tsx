@@ -4,9 +4,9 @@ import { navigate } from "@reach/router";
 import { InitComponent } from "./InitComponent";
 
 const InitContainer = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [url, setUrl] = useState("");
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [url, setUrl] = useState<string>("");
 
   const handleUserNameChange = (event: Event | undefined) => {
     if (event && event.target) {

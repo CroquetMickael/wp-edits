@@ -1,53 +1,35 @@
 .title-bar {
   display: flex;
   -webkit-app-region: drag;
-
   height: 32px;
-
   padding: 0px;
-
   margin: 0px;
-
   color: #ffffff;
-
   background-color: #3f3f41;
-
   font-family: sans-serif;
 }
 
 .title {
   position: fixed;
-
   top: 0px;
-
   left: 12px;
-
   line-height: 32px;
-
   font-size: 14px;
 }
 
 .title-bar-btns {
   -webkit-app-region: no-drag;
-
   position: fixed;
-
   top: 1px;
-
   right: 0px;
 }
 
 .title-bar-btns button {
   height: 32px;
-
   width: 32px;
-
   background-color: transparent;
-
   border: none;
-
   color: #f1f1f1;
-
   font-size: 16px;
 }
 .close-btn:hover {

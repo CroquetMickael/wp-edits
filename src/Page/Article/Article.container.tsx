@@ -11,7 +11,7 @@ const ArticleContainer: ArticleContainerProps = props => {
   const [article, setArticle] = useState<Article>({
     contenu: "",
     id: 0,
-    image_entete: { size: 0, type: "", slice: {} },
+    imageEntete: { size: 0, type: "", slice: {} },
     statut: "",
     titre: ""
   });

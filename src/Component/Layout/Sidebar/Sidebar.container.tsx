@@ -8,6 +8,10 @@ const SidebarContainer = () => {
       libelle: "Home"
     },
     {
+      href: "/newArticle",
+      libelle: "Ecrire un article"
+    },
+    {
         href: "/blogConnect",
         libelle: "Votre blog"
     }

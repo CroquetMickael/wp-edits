@@ -8,6 +8,7 @@ import { Router } from "@reach/router";
 import { AuthProvider } from "../../Common/AuthContext/AuthContext";
 import { PublicRoute, ProtectedRoute } from "../Route/Route";
 import "./route.css";
+import { NewArticleContainer } from "../../Page/NewArticle/NewArticle.container";
 export const Content = () => (
   <>
     <AuthProvider>
@@ -17,6 +18,7 @@ export const Content = () => (
         <ProtectedRoute component={Home} path="/home" />
         <ProtectedRoute component={BlogConnect} path="/blogConnect" />
         <ProtectedRoute component={Article} path="/article/:articleId" />
+        <ProtectedRoute component={NewArticleContainer} path="/newArticle"/>
       </Router>
     </AuthProvider>
   </>

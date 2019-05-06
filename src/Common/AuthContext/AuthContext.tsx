@@ -15,7 +15,7 @@ const AuthContext = React.createContext<any>(null);
 
 const AuthProvider = (props: AuthProps) => {
   const [isAuth, setIsAuth] = useState(false);
-  const [callback, setCallback] = useState("");
+  const [callback, setCallback] = useState('\u00A0');
   const login = (username: string, password: string) => {
     AuthService.login(username, password, setIsAuth, setCallback);
   };
@@ -28,10 +28,10 @@ const AuthProvider = (props: AuthProps) => {
   return (
     <AuthContext.Provider
       value={{
-        callback: callback,
-        isAuth: isAuth,
-        login: login,
-        logout: logout
+        callback,
+        isAuth,
+        login,
+        logout
       }}
     >
       {props.children}

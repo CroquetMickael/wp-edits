@@ -11,7 +11,9 @@
  */
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
+.loginimg {
+  background-image: url('./Assets/test.jpg')
+  }
 /* Document
    ========================================================================== */
 
@@ -19,28 +21,8 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
- .truncate-text-multiline {
-  overflow: hidden;
-  display: block;
-  height: 109.2px;
-  margin: 0 auto;
-  font-size: 26px;
-  line-height: 1.4;
-  width: 400px;
-  position: relative;
-}
 
-.truncate-text-multiline:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 150px;
-  height: 36.4px;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0), #f5f6f9 50%);
-}
-
-html {
+ html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
@@ -63,26 +45,7 @@ body {
 main {
   display: block;
 }
-.animated {
-  -webkit-animation-duration: 10s;
-  animation-duration: 10s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-@-webkit-keyframes fadeIn {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-}
 
-@keyframes fadeIn {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-}
-
-.fadeIn {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-}
 /**
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
@@ -449,9 +412,6 @@ button {
   padding: 0;
 }
 
-.loginimg {
-background-image: url('./Assets/test.jpg')
-}
 /**
  * Work around a Firefox/IE bug where the transparent `button` background
  * results in a loss of the default `button` focus styles.
@@ -3168,9 +3128,12 @@ table {
   height: 16rem;
 }
 
-
 .h-72 {
   height: 24rem;
+}
+
+.h-80 {
+  height: 34rem;
 }
 
 .h-auto {
@@ -8777,6 +8740,14 @@ table {
     height: 16rem;
   }
 
+  .sm\:h-72 {
+    height: 24rem;
+  }
+
+  .sm\:h-80 {
+    height: 34rem;
+  }
+
   .sm\:h-auto {
     height: auto;
   }
@@ -14349,6 +14320,14 @@ table {
 
   .md\:h-64 {
     height: 16rem;
+  }
+
+  .md\:h-72 {
+    height: 24rem;
+  }
+
+  .md\:h-80 {
+    height: 34rem;
   }
 
   .md\:h-auto {
@@ -19925,6 +19904,14 @@ table {
     height: 16rem;
   }
 
+  .lg\:h-72 {
+    height: 24rem;
+  }
+
+  .lg\:h-80 {
+    height: 34rem;
+  }
+
   .lg\:h-auto {
     height: auto;
   }
@@ -25497,6 +25484,14 @@ table {
 
   .xl\:h-64 {
     height: 16rem;
+  }
+
+  .xl\:h-72 {
+    height: 24rem;
+  }
+
+  .xl\:h-80 {
+    height: 34rem;
   }
 
   .xl\:h-auto {

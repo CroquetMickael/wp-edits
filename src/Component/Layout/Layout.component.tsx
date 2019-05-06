@@ -6,9 +6,9 @@ interface Props {
 }
 const Layout = (props: Props) => (
   <div className="h-screen">
-    <div className="flex ">
+    <div className="flex h-screen">
       <Sidebar />
-      <div className="w-full flex flex-wrap  h-screen">{props.children}</div>
+      <div className="w-full flex flex-wrap mb-8">{props.children}</div>
     </div>
   </div>
 );

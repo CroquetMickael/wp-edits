@@ -23,6 +23,9 @@ const AuthService = {
           navigate("/home");
         } else {
           setCallback("Mauvais Username et/ou Mot de passe");
+          setTimeout(function(){
+            setCallback('\u00A0')
+        }, 5000);
         }
       });
     }

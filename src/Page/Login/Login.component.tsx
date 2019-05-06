@@ -19,9 +19,10 @@ const LoginComponent = (props: LoginProps) => (
         <div className="w-1/2 bg-white h-full">
           <div className="bg-white">
             <div className="mx-6 mt-6">
-              <h1 className=" mb-8 text-xl ">Welcome to wp-edits</h1>
+              <h1 className="mb-8 text-xl ">Welcome to wp-edits</h1>
             </div>
-            <p className="text-red text-center mt-3">{props.callback}</p>
+            <p className={`text-red text-center mt-3 animated 
+            ${props.callback !="\u00A0" ? "flash" : ""}`}>{props.callback}</p>
             <InputComponent
               type="text"
               className="mx-32 my-6"

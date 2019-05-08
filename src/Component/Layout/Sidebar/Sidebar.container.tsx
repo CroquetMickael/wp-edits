@@ -5,18 +5,18 @@ const SidebarContainer = () => {
   const links: SidebarLink[] = [
     {
       href: "/home",
-      libelle: "Home",
-      icon: "home"
+      icon: "home",
+      libelle: "Home"
     },
     {
       href: "/newArticle",
-      libelle: "Ecrire un article",
-      icon: "plus"
+      icon: "plus",
+      libelle: "Ecrire un article"
     },
     {
-        href: "/blogConnect",
-        libelle: "Votre blog",
-        icon: "desktop"
+      href: "/blogConnect",
+      icon: "desktop",
+      libelle: "Votre blog"
     }
   ];
 

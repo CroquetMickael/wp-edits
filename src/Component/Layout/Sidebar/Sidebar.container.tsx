@@ -14,7 +14,11 @@ const SidebarContainer = () => {
     {
         href: "/blogConnect",
         libelle: "Votre blog"
-    }
+    },
+    {
+      href: "/accountSetting",
+      libelle: "Account Setting"
+  }
   ];
 
   const sidebarProps: SidebarProps = {

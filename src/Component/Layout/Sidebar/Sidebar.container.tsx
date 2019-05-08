@@ -18,10 +18,20 @@ const SidebarContainer = (props: SidebarProps) => {
       libelle: "Ecrire un article"
     },
     {
+<<<<<<< HEAD
       href: "/blogConnect",
       icon: "desktop",
       libelle: "Votre blog"
     }
+=======
+        href: "/blogConnect",
+        libelle: "Votre blog"
+    },
+    {
+      href: "/accountSetting",
+      libelle: "Account Setting"
+  }
+>>>>>>> feature(accountSetting) creation de la page de modification de compte
   ];
 
   const sidebarProps: SidebarComponentProps = {

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { AccountSettingUrlService } from "./AccountSettingUrl.service";
-import { AccountSettingUsernameService } from "./AccountSettingUsername.service";
-import { AccountSettingPasswordService } from "./AccountSettingPassword.service";
+import { AccountSettingsService } from "./AccountSetting.service";
 import { navigate } from "@reach/router";
 import { AccountSettingComponent } from "./AccountSetting.component";
+import { AuthContext, AppContextInterface } from "../../Common/AuthContext/AuthContext";
+import { useContext } from "react";
 
 const AccountSettingContainer = () => {
+
+  const AuthValues: AppContextInterface = useContext(AuthContext);
   const [newUsername, setNewUsername] = useState<string>("");
   const [confirmNewUsername, setConfirmNewUsername] = useState<string>("");
   const [newPassword, setNewPassword] = useState<string>("");
@@ -45,16 +47,16 @@ const AccountSettingContainer = () => {
     }
   };
   const changeUsername = (newUsername: string, confirmNewUsername:string) => {
-    AccountSettingUsernameService(newUsername, confirmNewUsername);
-    navigate("/accountSetting");
+    AccountSettingsService.AccountSettingUsernameService(newUsername, confirmNewUsername, AuthValues.id);
+    navigate("/home");
   };
   const changePassword = (newPassword: string, confirmNewPassword:string) => {
-    AccountSettingPasswordService(newPassword, confirmNewPassword);
-    navigate("/accountSetting");
+    AccountSettingsService.AccountSettingPasswordService(newPassword, confirmNewPassword, AuthValues.id);
+    navigate("/home");
   };
   const changeUrl = (newUrl: string, confirmNewUrl:string) => {
-    AccountSettingUrlService(newUrl, confirmNewUrl);
-    navigate("/accountSetting");
+    AccountSettingsService.AccountSettingUrlService(newUrl, confirmNewUrl, AuthValues.id);
+    navigate("/home");
   };
   const AccountSettingProps = {
     handlePasswordChange: (event: Event | undefined) =>
@@ -76,7 +78,8 @@ const AccountSettingContainer = () => {
     newPassword,
     confirmNewPassword,
     newUsername,
-    confirmNewUsername
+    confirmNewUsername,
+    AuthValues
   };
 
   return <>{<AccountSettingComponent {...AccountSettingProps} />}</>;

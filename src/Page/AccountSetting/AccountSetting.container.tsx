@@ -58,6 +58,13 @@ const AccountSettingContainer = () => {
     navigate("/home");
   };
   const AccountSettingProps = {
+    AuthValues,
+    changeUsername,
+    changePassword,
+    changeUrl, 
+    confirmNewPassword,
+    confirmNewUrl,
+    confirmNewUsername,
     handlePasswordChange: (event: Event | undefined) =>
     handlePasswordChange(event),
     handlePasswordConfirmChange: (event: Event | undefined) =>
@@ -69,14 +76,7 @@ const AccountSettingContainer = () => {
     handleUserNameChange: (event: Event | undefined) =>
     handleUserNameChange(event),    
     handleUserNameConfirmChange: (event: Event | undefined) =>
-    handleUserNameConfirmChange(event),
-    AuthValues,
-    changeUsername,
-    changePassword,
-    changeUrl, 
-    confirmNewPassword,
-    confirmNewUrl,
-    confirmNewUsername,
+    handleUserNameConfirmChange(event),    
     newPassword,
     newUrl,    
     newUsername

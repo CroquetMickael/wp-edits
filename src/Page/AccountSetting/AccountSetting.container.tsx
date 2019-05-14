@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { AccountSettingsService } from "./AccountSetting.service";
 import { navigate } from "@reach/router";
 import { AccountSettingComponent } from "./AccountSetting.component";
 import { AuthContext, AppContextInterface } from "../../Common/AuthContext/AuthContext";
-import { useContext } from "react";
 
 const AccountSettingContainer = () => {
 
@@ -46,30 +45,31 @@ const AccountSettingContainer = () => {
       setConfirmNewUrl((event.target as HTMLInputElement).value);
     }
   };
-  const changeUsername = (newUsername: string, confirmNewUsername:string) => {
+  const changeUsername = (newUsername: string, confirmNewUsername: string) => {
     AccountSettingsService.AccountSettingUsernameService(newUsername, confirmNewUsername, AuthValues.id);
     navigate("/home");
   };
-  const changePassword = (newPassword: string, confirmNewPassword:string) => {
+  const changePassword = (newPassword: string, confirmNewPassword: string) => {
     AccountSettingsService.AccountSettingPasswordService(newPassword, confirmNewPassword, AuthValues.id);
     navigate("/home");
   };
-  const changeUrl = (newUrl: string, confirmNewUrl:string) => {
+  const changeUrl = (newUrl: string, confirmNewUrl: string) => {
     AccountSettingsService.AccountSettingUrlService(newUrl, confirmNewUrl, AuthValues.id);
     navigate("/home");
   };
   const AccountSettingProps = {
     handlePasswordChange: (event: Event | undefined) =>
       handlePasswordChange(event),
-    handleUrlChange: (event: Event | undefined) => handleUrlChange(event),
+    handleUrlChange: (event: Event | undefined) => 
+      handleUrlChange(event),
     handleUserNameChange: (event: Event | undefined) =>
-      handleUserNameChange(event),
-    handleUserNameConfirmChange: (event: Event | undefined) =>
-    handleUserNameConfirmChange(event),
+      handleUserNameChange(event),    
     handlePasswordConfirmChange: (event: Event | undefined) =>
     handlePasswordConfirmChange(event),
     handleUrlConfirmChange: (event: Event | undefined) =>
     handleUrlConfirmChange(event),
+    handleUserNameConfirmChange: (event: Event | undefined) =>
+    handleUserNameConfirmChange(event),
     changeUsername,
     changePassword,
     changeUrl, 

@@ -3,21 +3,9 @@ import { dbPath } from "../../Database/dbUtils";
 import { Database } from "sqlite3";
 import { navigate } from "@reach/router";
 
-const AccountSettingsService = {
+const AccountSettingsService= {
 
-  AccountSettingUsernameService: (newUsername: string, confirmNewUsername: string, id : number) => {
-    if(newUsername == confirmNewUsername){
-    const db = new Database(dbPath);
-    const UpdateAccount = update()
-      .table("user")
-      .where("id = ?", id)
-      .set("login", newUsername)
-      .toString();
-    db.run(UpdateAccount);
-    db.close();
-    }
-  },
-  AccountSettingPasswordService: (newPassword: string, confirmNewPassword: string, id : number) => {
+  AccountSettingPasswordService: (newPassword: string, confirmNewPassword: string, id: number) => {
     if (newPassword == confirmNewPassword) {
       const db = new Database(dbPath);
       const UpdateAccount = update()
@@ -29,7 +17,7 @@ const AccountSettingsService = {
       db.close();
     }
   },
-  AccountSettingUrlService: (newUrl: string, confirmNewUrl: string, id : number) => {
+  AccountSettingUrlService: (newUrl: string, confirmNewUrl: string, id: number) => {
     if (newUrl == confirmNewUrl) {
       const db = new Database(dbPath);
       const UpdateAccount = update()
@@ -40,8 +28,19 @@ const AccountSettingsService = {
       db.run(UpdateAccount);
       db.close();
     }
+  },
+  AccountSettingUsernameService: (newUsername: string, confirmNewUsername: string, id: number) => {
+    if(newUsername == confirmNewUsername){
+    const db = new Database(dbPath);
+    const UpdateAccount = update()
+      .table("user")
+      .where("id = ?", id)
+      .set("login", newUsername)
+      .toString();
+    db.run(UpdateAccount);
+    db.close();
+    }
   }
 }
-
 
 export { AccountSettingsService };

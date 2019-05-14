@@ -59,9 +59,9 @@ const AccountSettingContainer = () => {
   };
   const AccountSettingProps = {
     AuthValues,
-    changeUsername,
     changePassword,
     changeUrl, 
+    changeUsername,
     confirmNewPassword,
     confirmNewUrl,
     confirmNewUsername,

@@ -12,7 +12,6 @@ interface HomeProps
 const HomeComponent = (props: HomeProps) => (
   <Layout>
     <div className="flex flex-wrap overflow-auto justify-center">
-      <div className="w-full mx-6">TEST</div>
       {props.articles.map((article, index) => (
         <ArticleCard {...article} key={index}/>
       ))}

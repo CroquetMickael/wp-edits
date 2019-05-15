@@ -1,0 +1,7 @@
+.Transition {
+    transition: all 500ms ease-out;
+}
+.SidebarNoActive {
+    overflow: hidden;
+    width: 10% !important;
+}

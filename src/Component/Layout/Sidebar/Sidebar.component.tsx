@@ -17,7 +17,8 @@ const SidebarComponent = (props: SidebarComponentProps) => (
       <FontAwesomeIcon icon="bars" />
     </li>
     <ul
-      className={`block flex flex-col list-reset text-center bg-white shadow w-full h-full border-r-2 border-grey Transition ${
+      className={`block flex flex-col list-reset text-center bg-white 
+      shadow w-full h-full border-r-2 border-grey Transition ${
         props.isOpen ? "SidebarContentNoActive" : ""
       }`}
     >

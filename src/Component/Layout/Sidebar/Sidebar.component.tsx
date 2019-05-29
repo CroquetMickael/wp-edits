@@ -11,13 +11,13 @@ const SidebarComponent = (props: SidebarComponentProps) => (
     }`}
   >
     <li
-      className="block no-underline bg-white p-4 h-16 w-16 rounded-full text-grey-darker text-center font-bold"
+      className="block no-underline bg-white p-4 text-grey-darker text-center font-bold"
       onClick={props.handlerMenu}
     >
       <FontAwesomeIcon icon="bars" />
     </li>
     <ul
-      className={`block list-reset text-center bg-white shadow w-full h-full border-r-2 border-grey Transition ${
+      className={`block flex flex-col list-reset text-center bg-white shadow w-full h-full border-r-2 border-grey Transition ${
         props.isOpen ? "SidebarContentNoActive" : ""
       }`}
     >

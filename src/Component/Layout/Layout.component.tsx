@@ -16,8 +16,8 @@ const Layout = (props: Props) => {
     }
   };
   const propstest = {
-    isOpen,
-    handlerButton
+    handlerButton,
+    isOpen
   };
   return (
     <div className="h-screen">

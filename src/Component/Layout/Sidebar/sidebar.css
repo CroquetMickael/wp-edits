@@ -5,3 +5,8 @@
     overflow: hidden;
     width: 10% !important;
 }
+
+.SidebarContentNoActive {
+    overflow: hidden;
+    width: 0% !important;
+}

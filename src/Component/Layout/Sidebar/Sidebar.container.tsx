@@ -25,9 +25,9 @@ const SidebarContainer = (props: SidebarProps) => {
   ];
 
   const sidebarProps: SidebarComponentProps = {
-    links,
+    handlerMenu: props.handlerButton,
     isOpen: props.isOpen,
-    handlerMenu: props.handlerButton
+    links
   };
   return <SidebarComponent {...sidebarProps} />;
 };

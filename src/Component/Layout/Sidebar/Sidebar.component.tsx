@@ -6,17 +6,21 @@ import { AccountSettings } from "./AccountSettings";
 import "./sidebar.css";
 const SidebarComponent = (props: SidebarComponentProps) => (
   <div
-    className={`bg-white shadow w-1/3 md:w-1/4 border-r-2 border-grey Transition ${
+    className={`flex flex-col Transition text-center ${
       props.isOpen ? "SidebarNoActive" : ""
     }`}
   >
-    <ul className="list-reset text-center">
-      <li
-        className="block no-underline p-4 text-grey-darker font-bold"
-        onClick={props.handlerMenu}
-      >
-        <FontAwesomeIcon icon="bars" />
-      </li>
+    <li
+      className="block no-underline bg-white p-4 h-16 w-16 rounded-full text-grey-darker text-center font-bold"
+      onClick={props.handlerMenu}
+    >
+      <FontAwesomeIcon icon="bars" />
+    </li>
+    <ul
+      className={`block list-reset text-center bg-white shadow w-full h-full border-r-2 border-grey Transition ${
+        props.isOpen ? "SidebarContentNoActive" : ""
+      }`}
+    >
       {props.links.map((link, index: number) => (
         <li key={index}>
           <Match path={link.href}>
@@ -35,10 +39,13 @@ const SidebarComponent = (props: SidebarComponentProps) => (
           </Match>
         </li>
       ))}
+      <div className="mt-auto" />
+      <footer className="w-full text-center border-t border-grey mb-8 p-4">
+        This is our footer
+      </footer>
     </ul>
-    <footer className="w-full text-center border-t border-grey p-4 pin-b">
-      This is our footer
-    </footer>
+
+    <div />
   </div>
 );
 

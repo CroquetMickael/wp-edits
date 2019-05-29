@@ -1,6 +1,6 @@
 import React from "react";
 import { navigate } from "@reach/router";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const ArticleCard = (props: any) => (
   <div
     className="w-1/3 md:w-1/4 h-72 rounded overflow-hidden sm:mx-2 
@@ -24,11 +24,12 @@ const ArticleCard = (props: any) => (
       </div>
       <div className="w-full">
         <span
-          className="rounded-full h-10 w-10 flex items-center justify-center 
-              bg-blue  cursor-pointer float-right mx-2 text-center"
+          className="flex items-center justify-center 
+              cursor-pointer float-right text-center"
           onClick={() => navigate(`/article/${props.id}`)}
         >
-          Circle
+          <FontAwesomeIcon icon="eye" className="text-blue" />
+          <span className="text-blue px-2">View</span>
         </span>
       </div>
     </div>

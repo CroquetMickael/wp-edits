@@ -1,7 +1,11 @@
 import React from "react";
-import { SidebarLink, SidebarProps } from "./Sidebar.interfaces";
+import { SidebarLink, SidebarComponentProps } from "./Sidebar.interfaces";
 import { SidebarComponent } from "./Sidebar.component";
-const SidebarContainer = () => {
+interface SidebarProps {
+  isOpen: boolean;
+  handlerButton: () => void;
+}
+const SidebarContainer = (props: SidebarProps) => {
   const links: SidebarLink[] = [
     {
       href: "/home",
@@ -20,7 +24,9 @@ const SidebarContainer = () => {
     }
   ];
 
-  const sidebarProps: SidebarProps = {
+  const sidebarProps: SidebarComponentProps = {
+    handlerMenu: props.handlerButton,
+    isOpen: props.isOpen,
     links
   };
   return <SidebarComponent {...sidebarProps} />;

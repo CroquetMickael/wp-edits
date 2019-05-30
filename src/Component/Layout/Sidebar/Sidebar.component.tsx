@@ -1,29 +1,52 @@
 import React from "react";
 import { Link, Match } from "@reach/router";
-import { SidebarProps } from "./Sidebar.interfaces";
+import { SidebarComponentProps } from "./Sidebar.interfaces";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const SidebarComponent = (props: SidebarProps) => (
-  <div className="bg-white shadow w-1/3 md:w-1/4 border-r-2 border-grey">
-    <ul className="list-reset text-center">
-      
+import { AccountSettings } from "./AccountSettings";
+import "./sidebar.css";
+const SidebarComponent = (props: SidebarComponentProps) => (
+  <div
+    className={`flex flex-col Transition text-center ${
+      props.isOpen ? "SidebarNoActive" : ""
+    }`}
+  >
+    <li
+      className="block no-underline bg-white p-4 text-grey-darker text-center font-bold"
+      onClick={props.handlerMenu}
+    >
+      <FontAwesomeIcon icon="bars" />
+    </li>
+    <ul
+      className={`block flex flex-col list-reset text-center bg-white 
+      shadow w-full h-full border-r-2 border-grey Transition ${
+        props.isOpen ? "SidebarContentNoActive" : ""
+      }`}
+    >
       {props.links.map((link, index: number) => (
         <li key={index}>
           <Match path={link.href}>
             {props => (
               <Link
                 className={`block no-underline p-4 text-grey-darker font-bold 
-                border-l-4 hover:border-blue ${
+                border-r-4 hover:border-blue ${
                   props.match ? "border-blue" : ""
                 }`}
                 to={link.href}
               >
-               <FontAwesomeIcon className="mx-1" icon={link.icon} /> {link.libelle}
+                <FontAwesomeIcon className="mx-1" icon={link.icon} />
+                {link.libelle}
               </Link>
             )}
           </Match>
         </li>
       ))}
+      <div className="mt-auto" />
+      <footer className="w-full text-center border-t border-grey mb-8 p-4">
+        This is our footer
+      </footer>
     </ul>
+
+    <div />
   </div>
 );
 

@@ -6,6 +6,8 @@ export interface SidebarLink {
   libelle: string;
   icon: IconProp;
 }
-export interface SidebarProps {
+export interface SidebarComponentProps {
   links: SidebarLink[];
+  isOpen: boolean;
+  handlerMenu: () => void;
 }

@@ -47,17 +47,18 @@ const AccountSettingContainer = () => {
     }
   };
   const changeUsername = (newUsername: string, confirmNewUsername:string) => {
-    AccountSettingsService.AccountSettingUsernameService(newUsername, confirmNewUsername, AuthValues.id);
+    AccountSettingsService(newUsername, confirmNewUsername, AuthValues.id, "login");
     navigate("/home");
   };
   const changePassword = (newPassword: string, confirmNewPassword:string) => {
-    AccountSettingsService.AccountSettingPasswordService(newPassword, confirmNewPassword, AuthValues.id);
+    AccountSettingsService(newPassword, confirmNewPassword, AuthValues.id, "password");
     navigate("/home");
   };
   const changeUrl = (newUrl: string, confirmNewUrl:string) => {
-    AccountSettingsService.AccountSettingUrlService(newUrl, confirmNewUrl, AuthValues.id);
+    AccountSettingsService(newUrl, confirmNewUrl, AuthValues.id, "url");
     navigate("/home");
   };
+  
   const AccountSettingProps = {
     handlePasswordChange: (event: Event | undefined) =>
       handlePasswordChange(event),

@@ -31,10 +31,11 @@ const AuthProvider = (props: AuthProps) => {
     <AuthContext.Provider
       value={{
         callback,
+        id,
         isAuth,
         login,
         logout,
-        id      
+        id    
       }}
     >
       {props.children}

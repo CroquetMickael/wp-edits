@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { AccountSettingsService } from "./AccountSetting.service";
 import { navigate } from "@reach/router";
 import { AccountSettingComponent } from "./AccountSetting.component";
 import { AuthContext, AppContextInterface } from "../../Common/AuthContext/AuthContext";
-import { useContext } from "react";
 
 const AccountSettingContainer = () => {
 
@@ -14,18 +13,6 @@ const AccountSettingContainer = () => {
   const [confirmNewPassword, setConfirmNewPassword] = useState<string>("");
   const [newUrl, setNewUrl] = useState<string>("");
   const [confirmNewUrl, setConfirmNewUrl] = useState<string>("");
-
-  const handleUserNameChange = (event: Event | undefined) => {
-    if (event && event.target) {
-      setNewUsername((event.target as HTMLInputElement).value);
-    }
-  };
-  const handleUserNameConfirmChange = (event: Event | undefined) => {
-    if (event && event.target) {
-      setConfirmNewUsername((event.target as HTMLInputElement).value);
-    }
-  };
-
   const handlePasswordChange = (event: Event | undefined) => {
     if (event && event.target) {
       setNewPassword((event.target as HTMLInputElement).value);
@@ -36,6 +23,16 @@ const AccountSettingContainer = () => {
       setConfirmNewPassword((event.target as HTMLInputElement).value);
     }
   };
+  const handleUserNameChange = (event: Event | undefined) => {
+    if (event && event.target) {
+      setNewUsername((event.target as HTMLInputElement).value);
+    }
+  };
+  const handleUserNameConfirmChange = (event: Event | undefined) => {
+    if (event && event.target) {
+      setConfirmNewUsername((event.target as HTMLInputElement).value);
+    }
+  };  
   const handleUrlChange = (event: Event | undefined) => {
     if (event && event.target) {
       setNewUrl((event.target as HTMLInputElement).value);
@@ -46,15 +43,15 @@ const AccountSettingContainer = () => {
       setConfirmNewUrl((event.target as HTMLInputElement).value);
     }
   };
-  const changeUsername = (newUsername: string, confirmNewUsername:string) => {
-    AccountSettingsService(newUsername, confirmNewUsername, AuthValues.id, "login");
-    navigate("/home");
-  };
-  const changePassword = (newPassword: string, confirmNewPassword:string) => {
+  const changePassword = (newPassword: string, confirmNewPassword:string ) => {
     AccountSettingsService(newPassword, confirmNewPassword, AuthValues.id, "password");
     navigate("/home");
   };
-  const changeUrl = (newUrl: string, confirmNewUrl:string) => {
+  const changeUsername = (newUsername: string, confirmNewUsername:string ) => {
+    AccountSettingsService(newUsername, confirmNewUsername, AuthValues.id, "login");
+    navigate("/home");
+  };  
+  const changeUrl = (newUrl: string, confirmNewUrl:string ) => {
     AccountSettingsService(newUrl, confirmNewUrl, AuthValues.id, "url");
     navigate("/home");
   };

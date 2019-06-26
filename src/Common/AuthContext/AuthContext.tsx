@@ -34,9 +34,8 @@ const AuthProvider = (props: AuthProps) => {
         id,
         isAuth,
         login,
-        logout,
-        id    
-      }}
+        logout
+        }}
     >
       {props.children}
     </AuthContext.Provider>

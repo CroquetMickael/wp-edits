@@ -14,4 +14,4 @@ export interface AccountSetting {
     changeUsername: (newUsername: string, confirmNewUsername: string) => void;
     changePassword: (newPassword: string, confirmNewPassword: string) => void;
     changeUrl: (newUrl: string, confirmNewUrl: string) => void; 
-};
+}

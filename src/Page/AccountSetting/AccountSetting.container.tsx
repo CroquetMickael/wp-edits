@@ -63,12 +63,12 @@ const AccountSettingContainer = () => {
       handlePasswordConfirmChange(event),
     handleUrlChange: (event: Event | undefined) => 
       handleUrlChange(event),
+    handleUrlConfirmChange: (event: Event | undefined) =>
+      handleUrlConfirmChange(event),
     handleUserNameChange: (event: Event | undefined) =>
       handleUserNameChange(event),
     handleUserNameConfirmChange: (event: Event | undefined) =>
       handleUserNameConfirmChange(event),
-    handleUrlConfirmChange: (event: Event | undefined) =>
-      handleUrlConfirmChange(event),
     changeUsername,
     changePassword,
     changeUrl, 

@@ -43,15 +43,15 @@ const AccountSettingContainer = () => {
       setConfirmNewUrl((event.target as HTMLInputElement).value);
     }
   };
-  const changePassword = (newPassword: string, confirmNewPassword:string ) => {
+  const changePassword = (newPassword: string, confirmNewPassword: string ) => {
     AccountSettingsService(newPassword, confirmNewPassword, AuthValues.id, "password");
     navigate("/home");
   };
-  const changeUsername = (newUsername: string, confirmNewUsername:string ) => {
+  const changeUsername = (newUsername: string, confirmNewUsername: string ) => {
     AccountSettingsService(newUsername, confirmNewUsername, AuthValues.id, "login");
     navigate("/home");
   };  
-  const changeUrl = (newUrl: string, confirmNewUrl:string ) => {
+  const changeUrl = (newUrl: string, confirmNewUrl: string ) => {
     AccountSettingsService(newUrl, confirmNewUrl, AuthValues.id, "url");
     navigate("/home");
   };
@@ -59,15 +59,16 @@ const AccountSettingContainer = () => {
   const AccountSettingProps = {
     handlePasswordChange: (event: Event | undefined) =>
       handlePasswordChange(event),
-    handleUrlChange: (event: Event | undefined) => handleUrlChange(event),
+    handlePasswordConfirmChange: (event: Event | undefined) =>
+      handlePasswordConfirmChange(event),
+    handleUrlChange: (event: Event | undefined) => 
+      handleUrlChange(event),
     handleUserNameChange: (event: Event | undefined) =>
       handleUserNameChange(event),
     handleUserNameConfirmChange: (event: Event | undefined) =>
-    handleUserNameConfirmChange(event),
-    handlePasswordConfirmChange: (event: Event | undefined) =>
-    handlePasswordConfirmChange(event),
+      handleUserNameConfirmChange(event),
     handleUrlConfirmChange: (event: Event | undefined) =>
-    handleUrlConfirmChange(event),
+      handleUrlConfirmChange(event),
     changeUsername,
     changePassword,
     changeUrl, 

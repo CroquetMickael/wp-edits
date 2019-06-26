@@ -59,6 +59,13 @@ const AccountSettingContainer = () => {
   };  
 
   const AccountSettingProps = {
+    authValues,
+    changePassword,
+    changeUrl,
+    changeUsername,     
+    confirmNewPassword,
+    confirmNewUrl,
+    confirmNewUsername,
     handlePasswordChange: (event: Event | undefined) =>
       handlePasswordChange(event),
     handlePasswordConfirmChange: (event: Event | undefined) =>
@@ -70,14 +77,7 @@ const AccountSettingContainer = () => {
     handleUserNameChange: (event: Event | undefined) =>
       handleUserNameChange(event),
     handleUserNameConfirmChange: (event: Event | undefined) =>
-      handleUserNameConfirmChange(event),
-    authValues,
-    changePassword,
-    changeUrl,
-    changeUsername,     
-    confirmNewPassword,
-    confirmNewUrl,
-    confirmNewUsername,
+      handleUserNameConfirmChange(event),    
     newPassword, 
     newUrl,       
     newUsername    

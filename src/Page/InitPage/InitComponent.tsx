@@ -29,6 +29,7 @@ const InitComponent = (props: InitProps) => (
               name="username"
               value={props.username}
             />
+            
             <InputComponent
               type="password"
               className="my-6 mx-32"

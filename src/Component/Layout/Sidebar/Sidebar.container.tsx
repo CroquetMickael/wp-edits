@@ -21,7 +21,13 @@ const SidebarContainer = (props: SidebarProps) => {
       href: "/blogConnect",
       icon: "desktop",
       libelle: "Votre blog"
-    }
+    },
+
+    {
+      href: "/accountSetting",
+      icon: "desktop",
+      libelle: "Account Setting"
+  }
   ];
 
   const sidebarProps: SidebarComponentProps = {

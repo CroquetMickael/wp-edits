@@ -6,6 +6,7 @@ export interface AppContextInterface {
   isAuth: boolean;
   login: () => void;
   logout: () => void;
+  id: number;
 }
 interface AuthProps {
   children: FunctionComponentElement<Component>;
@@ -15,9 +16,10 @@ const AuthContext = React.createContext<any>(null);
 
 const AuthProvider = (props: AuthProps) => {
   const [isAuth, setIsAuth] = useState(false);
+  const [id, setID] = useState('');
   const [callback, setCallback] = useState('\u00A0');
   const login = (username: string, password: string) => {
-    AuthService.login(username, password, setIsAuth, setCallback);
+    AuthService.login(username, password, setIsAuth, setCallback, setID);
   };
 
   const logout = () => {
@@ -29,10 +31,11 @@ const AuthProvider = (props: AuthProps) => {
     <AuthContext.Provider
       value={{
         callback,
+        id,
         isAuth,
         login,
         logout
-      }}
+        }}
     >
       {props.children}
     </AuthContext.Provider>

@@ -9,6 +9,7 @@ import { AuthProvider } from "../../Common/AuthContext/AuthContext";
 import { PublicRoute, ProtectedRoute } from "../Route/Route";
 import "./route.css";
 import { NewArticleContainer } from "../../Page/NewArticle/NewArticle.container";
+import { AccountSettingContainer } from "../../Page/AccountSetting/AccountSetting.container";
 export const Content = () => (
   <>
     <AuthProvider>
@@ -19,6 +20,7 @@ export const Content = () => (
         <ProtectedRoute component={BlogConnect} path="/blogConnect" />
         <ProtectedRoute component={Article} path="/article/:articleId" />
         <ProtectedRoute component={NewArticleContainer} path="/newArticle"/>
+        <ProtectedRoute component={AccountSettingContainer} path="/accountSetting"/>
       </Router>
     </AuthProvider>
   </>

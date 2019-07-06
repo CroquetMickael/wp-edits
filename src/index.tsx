@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { App } from "./Page/App";
 import "./index.css";
 import "./tailwind.css";
+import "./animate.css";
 import * as serviceWorker from "./serviceWorker";
 import { initDatabase } from "./Database/InitDb/initDatabase";
 

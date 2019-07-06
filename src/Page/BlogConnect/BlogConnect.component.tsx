@@ -9,7 +9,7 @@ const BlogConnectComponent = (props: BlogConnectProps) => (
       <iframe
         id="inlineFrameExample"
         title="Inline Frame Example"
-        className="w-full h-screen"
+        className="w-full"
         src={props.url}
       />
     </Layout>

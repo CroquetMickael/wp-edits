@@ -8,7 +8,8 @@ const AuthService = {
     username: string,
     password: string,
     setIsAuth: Function,
-    setCallback: Function
+    setCallback: Function,
+    setId: Function
   ) => {
     if (username != "" && password != "") {
       const db = new Database(dbPath);
@@ -20,9 +21,13 @@ const AuthService = {
       db.get(checkUser, [], (error: Error, rows) => {
         if (rows != null && rows != undefined && rows != []) {
           setIsAuth(true);
+          setId(rows.id);
           navigate("/home");
         } else {
           setCallback("Mauvais Username et/ou Mot de passe");
+          setTimeout(function(){
+            setCallback('\u00A0')
+        }, 5000);
         }
       });
     }

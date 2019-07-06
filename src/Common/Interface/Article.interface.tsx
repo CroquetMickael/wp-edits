@@ -1,6 +1,6 @@
 export interface Article {
   id: number;
-  image_entete: {};
+  imageEntete: {};
   contenu: string;
   statut: string;
   titre: string;

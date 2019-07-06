@@ -3,7 +3,7 @@ import { BlogConnectComponent } from "./BlogConnect.component";
 import { BlogConnectService } from "./BlogConnect.service";
 
 const BlogConnectContainer = () => {
-  const [url, setUrl] = useState("");
+  const [url, setUrl] = useState<string>("");
   const BlogConnectProps = {
     url
   };
